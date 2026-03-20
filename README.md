@@ -17,7 +17,7 @@ Here I have implemented various DSA concepts and solved multiple problems to str
 - Dynamic Programming (Basics)
 
 ## 💻 Languages Used
-- JavaScript / C++ / Java (update according to your code)
+- C
 
 ## 🎯 Purpose
 - Practice DSA concepts
