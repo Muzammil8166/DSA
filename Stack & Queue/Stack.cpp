@@ -4,29 +4,48 @@ int main (){
 	
 	int len, input;
 	printf("Enter the length of Stack \n>>");
-	scanf("%d",&len);
+	
+	if(scanf("%d",&len) != 1 || len <= 0){
+    	printf("Invalid input");
+    	return 0;
+	}
+	
 	int stack[len], top=-1, option, isRunning=1;
 	
 	do{	
 		printf("\nSelect a option");
 		printf("\n1.Push\n2.Pop\n3.Show\n4.Exit");
 		printf("\n>>");
-		scanf("%d",&option);
+		
+		if(scanf("%d",&option) != 1 || option <= 0 || option > 4){
+    		printf("Invalid input");
+    		while(getchar() != '\n');
+    		continue;
+		}
+		
 		switch(option){
+			
 			case 1:{
+				
 				if(top == len-1){
 					printf("\nThe Stack is Full");
 				}else{
 					top++;
 					printf("\nEnter Number to Push >>");
-					scanf("%d", &input);
+					if(scanf("%d", &input) != 1){
+    					printf("Invalid input");
+    					while(getchar() != '\n');
+    					continue;
+					}
 					stack[top] = input;
 				}
 				break;
 			}
+			
 			case 2:{
+				
 				if(top == -1){
-					printf("\nStack is Empty");
+					printf("\nThe Stack is Empty");
 				}else{
 					printf("\n%d is Deleted",stack[top]);
 					top--;
@@ -34,9 +53,11 @@ int main (){
 				break;
 				
 			}
+			
 			case 3:{
+				
 				if(top == -1){
-					printf("\nThe Stck is Empty");
+					printf("\nThe Stack is Empty");
 				}else{
 					for(int i=0; i <= top ; i++){
 						printf("\n%d at> %d",i+1,stack[i]);
@@ -46,7 +67,9 @@ int main (){
 				
 				break;
 			}
+			
 			case 4:{
+				
 				isRunning=0;
 				break;
 				
