@@ -5,7 +5,7 @@ int main (){
 	int len, input;
 	printf("Enter the length of Stack \n>>");
 	scanf("%d",&len);
-	int stack[len], top=-1, option, exit=1;
+	int stack[len], top=-1, option, isRunning=1;
 	
 	do{	
 		printf("\nSelect a option");
@@ -47,9 +47,10 @@ int main (){
 				break;
 			}
 			case 4:{
-				exit = 0;
+				isRunning=0;
 				break;
+				
 			}
 		}
-	}while(exit);
+	}while(isRunning);
 }
